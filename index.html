@@ -4,8 +4,16 @@
   <TITLE>Cat clicker KO</TITLE>
 </HEAD>
 
-<BODY BGCOLOR="FFFFFF" data-bind="with: currentCat()">
+<BODY BGCOLOR="FFFFFF" >
+<section>
+  <ul data-bind="foreach: catList()">
+    <li>
+      <span data-bind="click: $parent.changeCurrentCat, text: name, attr: {id: 'myprefix_' + $index() "> </span>
+    </li>
+  </ul>
+</section>
 
+<section data-bind="with: currentCat()">
   <div>
     <h2 data-bind="text: name"></h2>
     <h3 data-bind="text: level"></h3>
@@ -15,10 +23,11 @@
 
   <ul data-bind="foreach: nicknames">
     <li>
-      <span data-bind="text: nick"> </span>
+      <span data-bind="text: $data"> </span>
     </li>
   </ul>
-
+</section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
   <script src="js/catclicker.js"></script>
 </BODY>
