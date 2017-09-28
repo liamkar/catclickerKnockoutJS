@@ -1,17 +1,26 @@
 <HTML>
+
 <HEAD>
-<TITLE>Cat clicker KO</TITLE>
+  <TITLE>Cat clicker KO</TITLE>
 </HEAD>
+
 <BODY BGCOLOR="FFFFFF">
 
   <div>
-  <h2 data-bind="text: name"></h2>
-  <h3 data-bind="text: level"></h3>
-  <div data-bind="text: clickCount"></div>
-  <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+    <h2 data-bind="text: name"></h2>
+    <h3 data-bind="text: level"></h3>
+    <div data-bind="text: clickCount"></div>
+    <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
   </div>
 
-<script type='text/javascript' src='js/knockout-3.4.2.js'></script>
-<script src="js/catclicker.js"></script>
+  <ul data-bind="foreach: nicknames">
+    <li>
+      <span data-bind="text: nick"> </span>
+    </li>
+  </ul>
+
+  <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+  <script src="js/catclicker.js"></script>
 </BODY>
+
 </HTML>
